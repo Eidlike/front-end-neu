@@ -1,0 +1,55 @@
+.display {
+    
+    margin: 20px auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(245,245,245);
+    width: max(70%,500px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px 1px rgb(61, 61, 61) ;
+    border-radius: 5px;
+  }
+  
+  .display > div {
+    margin-bottom: 15px;
+  }
+  
+  .display > div:last-child {
+    margin-bottom: 0;
+  }
+  
+  .display > div:nth-child(2),
+  .display > div:nth-child(3) {
+    display: inline-block;
+
+  }
+  
+  .display > div:nth-child(odd) {
+    color: #333; 
+  }
+  
+  #Editt{
+    width: 200px;
+    height: 40px;
+    align-self: flex-end;
+    cursor: pointer;
+
+  }
+  .empty{
+    width: 240px;
+    height: 240px;
+    background-position: center;
+    background-size: cover;
+
+  }
+  .table_pat{
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+.table_pat tr{
+height: 37px;
+  }

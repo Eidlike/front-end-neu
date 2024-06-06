@@ -1,0 +1,20 @@
+.generel_infoo{
+position: relative;
+width: 100%;
+height: calc(100vh - 65px);
+overflow: hidden;
+display: flex;
+flex-direction: row;
+
+}
+
+/* ///////////////Right part */
+.docu_nav{
+    width: calc(100% - 230px);
+    height: (100vh - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+

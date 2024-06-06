@@ -1,0 +1,159 @@
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(245,245,245);
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     border-bottom:1px solid rgb(217, 215, 215) ;
+
+}
+.logo_space{
+    background-color: rgb(245,245,245);
+    width: 300px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo_img{
+    width: 60px;
+    height: 60px;
+    left: 0px;
+    align-items: center;
+    background-image: url(../ns_images/logo.jpg);
+    background-position: center;
+    background-size: cover;
+ 
+}
+.logo_text{
+  padding-top: 8px;
+    background-color: rgb(245,245,245);
+    width: 220px;
+    height: 50px;
+    font-size: 46px;   
+    
+}
+.neuro{color: rgb(31,139,204) ;
+}
+.soin{color: rgb(70,201,186);
+}
+.headlist{
+    padding: 0;
+    list-style: none;
+    padding-top: 4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.headlist li{
+    margin: 0px 22px;
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+   
+}
+.headlist li a{
+    text-decoration: none;
+    color: rgb(31,139,204);
+}
+.headlist li::after {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: rgb(70,201,186);
+    text-decoration: none;
+    left: 0%;
+    bottom: -19px;
+    transition: 0.5s;
+}
+.headlist li:hover::after{
+    width: 100%;
+}
+.buttonlogin a {
+    margin: 8px;
+    width: 100px;
+    height: 45px;
+    background-color: rgb(31,139,204);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0px 0px 2px 1px rgb(31,139,204);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    cursor: pointer;
+    
+}
+
+/* ////////////// lil pic/////////////// */
+.submenu{
+    width: 55px;
+    height: 55px;
+    margin-right:20px;
+    position: relative;
+}
+.lil_profil_pic{
+    width: 55px;
+    height: 55px;
+    background-color: gray;
+    border-radius: 30px;
+    cursor: pointer;
+    background-image: url(../ns_images/logo.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid gray
+}
+
+
+
+
+
+
+.real_sub_menu{
+    background-color: rgb(222, 220, 220);
+    width: 170px;
+    height: max-content;
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    top:  70px;
+    right: 0;
+    visibility: hidden;
+    z-index: 1;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.sub_menu_list_elements{
+    list-style: none;
+    display: block;
+    font-size: large;
+    padding: 0;
+    margin: 0;
+    font-size: larger;
+    font-weight: bold;
+    
+}
+.sub_menu_list_elements li{
+    margin: 4px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.sub_menu_list_elements li:hover{
+  background-color: rgb(31,139,204);
+  cursor: pointer;
+transition: 0.1s;
+}
+::placeholder{
+    font-size: 18px;
+    font-weight: 500;
+}

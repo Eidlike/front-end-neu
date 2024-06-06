@@ -1,0 +1,155 @@
+.container111{
+    margin: 0px 0px;
+    width: 100%;
+    height:90vh ;
+    background-color: rgb(245,245,245);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign_up_form_text{
+text-align: center;
+width: 70%;
+height: 200px;
+padding: 0;
+font-size: 20px;
+color: rgb(31,139,204) ;
+margin: 10px;
+ }
+
+.sign_up_form_text h1{
+    text-shadow: 1px 0px 1px;
+    font-weight: 200;   
+}
+.content{
+    background-color: rgb(245,245,245);
+    width: 80%;
+    min-height: 90%;
+    display: flex;
+    display: flex;
+    position: relative;
+    justify-content:end;
+}
+
+
+/*-----------------------Content PART -------------------> */
+.content_image{
+    position: absolute;
+    display: flex;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-image: url(../../ns_images/logo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain ; 
+
+}
+.sign_up_form{
+    position: absolute;
+    right: 70px;
+    padding: 15px;
+    width: 60%;
+    height: 90vh;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    width: 120%;
+    min-height: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.name input{
+    font-size: 19px;
+    width: 190px;
+    height: 40px; 
+    border-bottom:2px solid rgb(70,201,186) ;
+    outline: none;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid rgb(70,201,186);
+    padding-left: 10px;
+
+} 
+.password input,.email input,.adress input,.tele input,.birdthday input{
+    font-size: 19px;
+    padding: 0;
+    width: 410px;
+    height: 40px;
+    background-color: transparent;
+    border-bottom:2px solid rgb(70,201,186) ;
+    outline: none;
+    margin: 7px 0px;
+    border-radius: 5px;
+    border: 1px solid rgb(70,201,186);
+    transition: 0.5s;
+    padding-left: 10px;
+
+}
+.password,.email{
+    width: 420px;
+}
+.sign_up_form div input:hover{
+    border: 1px solid rgb(70,201,186);
+    box-shadow: 1px 1px 2px 1px rgb(70,201,186);
+}
+
+#sexe_label{
+    font-size: larger;
+}
+#sign_up_button  {
+    margin-inline:auto ;
+    background-color: rgb(70,201,186);
+    color:white;
+    border-color: rgb(70,201,186);
+    width: 300px;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#sign_up_button:hover{
+    background-color:rgb(24, 233, 208) ;
+}
+
+.name label{
+    position: absolute;
+    transform: translate(-px,-19px);
+}
+
+.have_account{
+    width: 400px;
+    margin: 5px;
+    text-align: end;
+}
+.have_account a{
+    text-decoration: none;
+    color: rgb(70,201,186);
+}
+::placeholder{
+    color: rgb(48, 48, 48);
+}
+
+
+.messagess{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3;
+    width: 400px;
+    height: 40px;
+    background-color: #fed1d6;
+    color: red;
+    transform: translate(10px,20px);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.5s;
+ }

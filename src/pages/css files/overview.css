@@ -1,0 +1,127 @@
+
+/* ////////////////////////// documents body///// */
+
+.duc_body{
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.V_btn{
+    position: absolute;
+    bottom: 18vh;
+    right: 20px;
+    height: 40px;
+    width: 170px;
+}
+.V_btn button{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(31,139,204);
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.V_btn button:hover{
+    background-color: rgb(25, 163, 249);
+    box-shadow: 2px 2px 5px 5px rgb(31,139,204);
+    ;
+
+
+}
+.date_visual_docs{
+    width: 100%;
+    height: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 30px;
+    margin: 9px;
+}
+.visual_docs{
+    background-color: rgb(237, 235, 235);
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    padding-left: 10px;
+    justify-content: start;
+    position: relative;
+} 
+
+.visual_docs div img, .small img{
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    cursor: pointer;
+        flex: 1;
+}
+.prev_button,.next_button{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    transform: translateY(200%)
+}
+
+.prev_button:hover,.next_button:hover {
+    background-color: #0056b3;
+}
+
+.prev_button {
+    left: 0;
+}
+
+.next_button {
+    right: 0;
+}
+
+input[type=file]::file-selector-button {
+    margin: 10px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    border: none;
+    background:  rgb(31,139,204);
+    padding: 10px 20px;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+  }
+
+  .upload-button {
+    background-color:rgb(31,139,204);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-button:hover {
+    background-color:rgb(5, 157, 252); 
+  }

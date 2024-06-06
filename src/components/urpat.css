@@ -1,0 +1,112 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-textfield-decoration-container {
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ur_pat_body{
+width: 100%;
+height: calc(100vh - 65px);
+display: flex;
+flex-direction: column;
+align-items: center;
+overflow-y: auto;
+}
+.get_pat_for{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+#search{
+    width: 500px;
+    height: 35px;
+    border: 1px solid rgb(186, 185, 185);
+    outline: none;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 30px;
+    padding-left: 10px;
+
+}
+
+#searching_button{
+    width: 120px;
+    height: 35px;
+    border: 1px solid rgb(31,139,204);
+    background-color: rgb(31,139,204);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+#searching_button:hover{
+    background-color: rgb(25, 167, 255) ;
+    transform: scale(1.05);
+}
+.searching_space{
+    position: relative;
+    margin-bottom:15px ;
+}
+.semi_message{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 300px;
+    height: 20px;
+    font-size: 16px;
+    bottom: 7px;
+    left: 10px;
+}
+.ur_pat_body table{
+    margin-bottom: 30px;
+}
+.your_patient_table{
+    width: max(78%,400px);
+    max-height: 80vh;
+    margin: 15px auto;
+    box-shadow: 1px 1px 10px 1px rgb(211, 209, 209);
+    border: 1px solid rgb(199, 198, 198);
+    padding: 2px 5px;
+    border-spacing: 0 10px;
+
+}
+.row_data{
+    height: 50px;
+    outline: 1px  solid rgb(224, 221, 221);
+    border-radius: 5px;
+    background-color: white;
+    margin: 3px;
+    margin-bottom: 10px;
+}
+.row_data td{ 
+   padding: 2px 8px;
+   text-align: center;
+   font-weight: bold;
+   font-size: 18px;
+}
+.the_buttonss1,.the_buttonss2{
+    width: 70px;
+    height: 25px;
+    background-color: rgb(31,139,204);
+    border-radius: 5px;
+    font-size: 18;
+    border: 1px solid gray;
+}
+.the_buttonss1:hover{
+    background-color: rgb(18, 153, 237);
+    box-shadow: 0 0 3px 1px rgb(18, 153, 237);;
+    color: white;
+}
+.the_buttonss2{
+    background-color: rgb(250, 49, 49);
+}
+.the_buttonss2:hover{
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 0 3px 1px red;
+    color: white;
+}

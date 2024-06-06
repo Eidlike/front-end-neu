@@ -1,0 +1,44 @@
+.bigger_rdv_container{
+    width: 100%;
+    background-color: rgb(245,245,245);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.top_navigation_containers_holder{
+    color: rgb(31,139,204);
+    font-weight: bold;
+    width: max(100%,400px);
+    height: 40px;
+    display: flex;
+    align-items: center;}
+.navigation_container_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49%;
+    font-size: 25px;
+}
+.top_navigation_containers_holder span{
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -6.5px;
+}
+.appointments_container{
+    width: max(78%,400px);
+    max-height: 80vh;
+    margin: 15px auto;
+    background-color: aqua;
+    box-shadow: 1px 1px 10px 1px rgb(211, 209, 209);
+}
+.appointment_list_holder{
+    padding: 2px 7px;
+    list-style: none;
+}
+.an_appointment_style{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+}
