@@ -48,7 +48,6 @@ function App() {
           <Route path='/gen_info/add_patient' element={user!==null?<Addpatient />:<HomePage/>} />
           <Route path='/changepass/:token' element={<Passchange />} />
           <Route path='/offers' element={<Pricingpage user={user}/>}/>
-          <Route path='/test' element={<Testt />} />
           <Route path='/app' element={<Appointments />} />
           <Route path='/header' element={<Passchange/>} />
         </Routes>
