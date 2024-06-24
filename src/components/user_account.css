@@ -1,0 +1,249 @@
+
+.everthinggg{
+  overflow: hidden;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+}
+.editable_infos{
+  margin: 0 auto;
+    width: max(70%,600px);
+    background-color: rgb(245,245,245);
+    font-size: 18px;
+ 
+}
+.information_table{
+    width: 600px;
+    letter-spacing: 1px;
+    margin: 0 auto;
+}
+
+.information_table tr{
+height: 50px;
+}
+
+
+.information_table tr th{
+    border-bottom: 1px solid gray;
+    width: 200px;
+}
+
+.information_table tr td{
+    border-bottom: 1px solid gray;
+    width: 300px;
+    font-size: 19px;
+    color: rgb(75, 73, 73);
+    
+}
+/*-------------edit --------------*/ 
+#edit {
+  background-color: rgb(31,139,204);
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 10px ;
+  outline: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}
+
+#edit:hover {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+/*-------------save --------------*/ 
+
+
+#savebutton {
+    background-color: green;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 20px ;
+    outline: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+  }
+  
+  #savebutton:hover {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+  }
+
+
+  /*-------------cancel --------------*/ 
+
+
+  #cancel {
+    background-color: red;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 20px ;
+    outline: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+  }
+  
+  #cancel:hover {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+  }
+
+  .information_table tr td input{
+    width: 250px;
+    height: 30px;
+    padding: 0;
+    padding-left: 5px;
+    font-size: 16px;
+  }
+
+
+  .big_pictur_container{
+    background: linear-gradient(to bottom right,
+      rgb(70, 201, 186),
+      rgb(31, 139, 204),
+      rgb(31, 139, 204),
+      rgb(70, 201, 186));
+     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pictur_container_small{
+    width: 150px;
+    height: 150px;
+  }
+  .pictur_container_small img{
+  width: 140px;
+  height: 140px;
+  border-radius: 100px;
+
+  }
+.pop_up_card_to_print{
+  position: fixed;
+  width: calc(100% + 230px);
+  height: 100%;
+  background-color:rgba(0, 0, 0, .6);
+  z-index: 222;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-230px,0);
+  }
+  .card_body_print{
+    overflow: hidden;
+    margin: 0 auto;
+    height: 250px;
+    width: 500px;
+    background: linear-gradient(to bottom right,
+    rgb(70, 201, 186),
+    rgb(31, 139, 204),
+    rgb(31, 139, 204),
+    rgb(70, 201, 186));
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    position: relative;
+  }
+  .card_body_print h1{
+    margin: 10px;
+    color: rgb(232, 242, 244);
+    font-size: 38px;
+    letter-spacing: 1px;
+    text-shadow: 1px 0.5px 3px rgb(248, 242, 242);
+  }
+  .general_docot_card{
+    display: flex;
+    width: max(100% , 350px);
+    height:300px;
+ 
+
+  }
+  .icons_details{
+    padding-left: 5px;
+    font-size: 25px;
+
+ }
+ .left_part_docot_card{
+  width: 90%;
+  display: flex;
+  align-items: center;
+ }
+
+
+ .left_part_docot_card h3{
+margin: 5px;
+ }
+
+ .right_part_docot_card{
+width: 300px;
+height: 100%;
+  display: flex;
+  position: relative;
+
+ }
+ .just_div_pic_cont{
+  width:  150px;
+  height: 150px;
+  position: absolute;
+  background-image:url(../ns_images/logo.jpg) ;
+  background-position: center;
+  background-size: cover;
+  bottom: 0px;
+  right: 0px;
+border-bottom-left-radius: 20px;
+
+ }
+ .flexflex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ .decoration{
+  width: 220px;
+  height: 210px;
+  position: absolute;
+  bottom: 10px;
+  right: -82px;
+  background-color: white;
+  transform: rotate(50deg);
+  border-radius: 5px;
+ }
+ .buttons_holder{
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+align-items: start
+ }
+ @media(max-width:417px){
+  .everthinggg,.editable_infos,.information_table{width: 100%;}
+  .pop_up_card_to_print{
+    width: 100%;
+    height: 100%;
+    transform: translate(0);
+    }
+    .card_body_print{
+        transform: scale(0.78);
+        margin: 0;
+    }
+  
+ }
