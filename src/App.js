@@ -7,7 +7,6 @@ import Signup from './pages/js files/sign_up_page';
 import Geninfo from './pages/js files/info_page';
 import Addpatient from './pages/js files/info_docs/add_patients';
 import Pricingpage from './pages/js files/pricing_page';
-import Testt from './components/testonly';
 import Passchange from './pages/js files/changinf_passsword';
 import Appointments from './components/appointments';
 
