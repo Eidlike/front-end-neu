@@ -17,7 +17,9 @@ export default function Addpatient(){
     sexe:'',
     tele:'',
     Adress:'',
-    doc_or_pat:'Patient'
+    doc_or_pat:'Patient',
+    blood:'',
+    rh:''
  })
   const handlsinput= (e)=>{
   const {name,value}=e.target;
@@ -26,18 +28,18 @@ export default function Addpatient(){
  }
      const handlsbmit= async(e)=>{
       e.preventDefault()
-      console.log(formm)
 
       try{
  const submitform = await fetch('http://localhost:5000/newregistering',{
   method:'post',
-  body:JSON.stringify({first_name:formm.first_name,last_name:formm.last_name,email:formm.email,National_identification_number:formm.National_identification_number,password:formm.password,birthday:formm.birthday,sexe:formm.sexe,tele:formm.tele,Adress:formm.Adress,doc_or_pat:formm.doc_or_pat}),
+  body:JSON.stringify({first_name:formm.first_name,last_name:formm.last_name,email:formm.email,National_identification_number:formm.National_identification_number,password:formm.password,birthday:formm.birthday,sexe:formm.sexe,tele:formm.tele,Adress:formm.Adress,doc_or_pat:formm.doc_or_pat,blood:formm.blood,rh:formm.rh}),
   headers:{
     'Content-Type': 'application/json'
   }
  })
  const data = await submitform.json()
-  data?toast.success(" Patient account has insearted successfully", {
+ console.log(data)
+  data?toast.success("Patient account has insearted successfully", {
     position: "top-right",
     autoClose: 3000,
     hideProgressBar: false,
@@ -68,10 +70,7 @@ export default function Addpatient(){
   return (<>
                 <div className='duc_body1'>
     <div className='text_patt' style={{color:'rgb(31,139,204)'}}> <h1> Add patient  </h1>  </div>     
-<div className='form_bodyy'>
-  
-        <form onSubmit={handlsbmit} >
-
+        <form onSubmit={handlsbmit} className='form_bodyy' >
         <input id='name_p' 
         minLength={3}
         maxLength={30}
@@ -80,8 +79,6 @@ export default function Addpatient(){
         placeholder='First name' 
         value={formm.first_name}
          onChange={handlsinput}required></input>
-
-
        <input id='name_p' 
        type='text' 
        minLength={3}
@@ -110,19 +107,17 @@ maxLength={30}
        required></input><br/>
        
        
-       <div name='password'>
          <input id='password_p' 
          type='text' 
          name='password' 
          placeholder='password' 
          value={formm.password} 
          onChange={handlsinput}
-         required></input>
-       </div>
-       
+         required></input>         <br/>
        <div className="sex-container">
-  <label htmlFor="maleRadio">Sexe: </label>
+  <label htmlFor="maleRadio" style={{fontSize:'18px',fontWeight:'bold'}}>Sexe: </label>
   <input
+  style={{cursor:'pointer'}}
     id='maleRadio'
     type='radio'
     name='sexe'
@@ -131,8 +126,9 @@ maxLength={30}
     onChange={handlsinput}
     required
   />
-  <label htmlFor="maleRadio">Male </label>
+  <label htmlFor="maleRadio" style={{fontSize:'18px',fontWeight:'bold' ,cursor:'pointer'}}>Male </label>
   <input
+  style={{cursor:'pointer'}}
     id='femaleRadio'
     type='radio'
     name='sexe'
@@ -140,8 +136,9 @@ maxLength={30}
     checked={formm.sexe === 'Female'}
     onChange={handlsinput}
   />
-  <label htmlFor="femaleRadio">Female</label>
+  <label htmlFor="femaleRadio" style={{fontSize:'18px',fontWeight:'bold',cursor:'pointer'}}>Female</label>
 </div>
+<br/>
        <input id='tlf_p' 
        required
        type='text' 
@@ -153,8 +150,8 @@ maxLength={30}
 </input>
 <br/>
        
-    <DatePicker
-          id='birthday_p'
+   <div className='datpicker_diver'> <DatePicker
+          className='birthday_p'
           selected={formm.birthday}
           onChange={(date) => { setform({ ...formm, birthday: date });  }} 
           placeholderText='Birthday'
@@ -162,6 +159,8 @@ maxLength={30}
           showYearDropdown
           dropdownMode='select'    required
         />
+        </div>
+        <br/>
        <input id='adress_p' 
        required
        type='text' 
@@ -169,11 +168,24 @@ maxLength={30}
        name='Adress' 
        onChange={handlsinput} 
        value={formm.Adress}></input> <br/>
-       
+        <div className='additional_info'>
+        <select id="bloodType" name="blood" value={formm.blood} onChange={handlsinput}>
+          <option value="">Select bloodType</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="AB">AB</option>
+          <option value="O">O</option>
+        </select>
+        <select id="rhFactor" name="rh" value={formm.rh} onChange={handlsinput}>
+          <option value="">Select Rhesus</option>
+          <option value="Positive">Positive</option>
+          <option value="Negative">Negative</option>
+        </select>
+      </div>
+      <br/>
  <div className='sub_btnn'> <button id='add_patt' type='submit'>Add patient</button> </div>
 
 </form>
-</div>
  </div>  
   </>
    

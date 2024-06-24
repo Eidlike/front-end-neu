@@ -1,36 +1,22 @@
 .containerz{
     margin: 0px 0px;
     width: 100%;
-    height:90vh ;
+    min-height:90vh ;
     background-color: rgb(245,245,245);
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 .log_in_form_text{
-    text-align: center;
-    width: 70%;
-    height: 200px;
-    padding: 0;
     font-size: 20px;
     color: rgb(31,139,204) ;
     margin: 10px;
     text-shadow: 1px 0px 1px;
     font-weight: 200;   
+    z-index: 2;
      }
-     .content{
-        background-color: rgb(245,245,245);
-        width: 80%;
-        display: flex;
-        display: flex;
-        position: relative;
-        justify-content:end;
-    }
     .content_image{
         left: 0;
-        width: 500px;
-        height: 100%;
         background-image: url(../../ns_images/logo.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -38,40 +24,31 @@
         position: absolute;
     }
     .log_in_form{
-        right: 70px;
-        padding: 15px;
-        width: 60%;
         z-index: 1;
         display: flex;
-        flex-direction: column;
+        transform: translate(10rem);
+        transition: 3s;
     }
-    /* ////////////////////////////////////////////////// */
+    @media (max-width:800px){
+        .log_in_form{
+            transform: translate(0);
+    
+        }
+    }
+    /* ///-------------- ---------------/// */
     .email,.password{
         font-size: 16px;
         width: 60%;
         height: 60px;
         border-radius: 5px;
         position: relative;
-
     }
     #email,#password{
         width: 97%;
         height: 40px;
         padding-left: 10px;
     }
-    /* .password,.email {
-        padding: 0;
-        width: 410px;
-        height: 40px;
-        background-color: black;
-        border-bottom:2px solid rgb(70,201,186) ;
-        outline: none;
-        border-radius: 5px;
-        border: 1px solid rgb(70,201,186);
-        transition: 0.5s;
-    } */
-    /* //////////////////////////////////////////////////// */
-    .log_in_formm div input:hover{
+   .log_in_formm div input:hover{
         border: 1px solid rgb(70,201,186);
         box-shadow: 1px 1px 2px 1px rgb(70,201,186);
     }
@@ -79,7 +56,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        position: static;
         background-color: rgb(70,201,186);
         color:white;
         border-color: rgb(70,201,186);
@@ -94,7 +70,6 @@
         background-color:rgb(24, 233, 208) ;
     }
     .have_not_account{
-        width: 400px;
         margin: 5px;
         text-align: end;
     }
@@ -104,27 +79,11 @@
     }
     .iconpass{
         position:absolute;
-        top: 17px;
-        right:15px;
+        top: 18px;
+        right: 10px;
         cursor: pointer;
     } 
 
- .messages{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 3;
-    width: 360px;
-    height: 40px;
-    background-color: #fed1d6;
-    color: red;
-    transform: translate(0,80px);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.5s;
- }
 
  .restorint_pass_background_popup{
     position: fixed;
@@ -154,7 +113,7 @@
    color: rgb(31,139,204);
 }
 .restoring_email{
-    width: 300px;
+    width: 400px;
     height: 40px;
     background-color: white;
     position: relative;
@@ -178,8 +137,9 @@
     align-items: center;
     justify-content: center;
     width: 120px;
-    height: 30px;
+    height: 40px;
     margin: 19px auto;
+    font-size: 18px;
     background-color: rgb(31,139,204);
     color: white;
     border: 0;
@@ -190,4 +150,43 @@
 }
 .restoring_pass_buttn:hover{
     background-color: rgb(44, 181, 223);
+}
+@media (max-width:417px) {
+
+    .log_in_form_text h1{
+        padding-top: 40px;
+        font-size: 30px;
+    }
+    .log_in_form{
+        width: 100%;
+        margin: 0 auto;
+        right: 70px;
+        padding-top: 40px;
+    }
+    .email,.password{
+        width: 90%;
+        margin: 0 auto;
+    }
+    #email,#password{
+        height: 40px;
+        padding-left: 10px;
+    } 
+    #log_in_button{
+        width: 50%;
+        height: 40px;
+        margin: 0 auto;
+    }
+    .have_not_account{
+        width: 90%;
+        font-size: 16px;
+        margin: 20px 0;
+    }
+    .resorint_password_box_email_searcher{
+        width: 98%;
+    }
+    .restoring_email{
+        width: 90%;
+        height: 45px;
+        margin: 20px auto;
+    }
 }

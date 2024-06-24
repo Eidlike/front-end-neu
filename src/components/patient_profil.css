@@ -1,10 +1,9 @@
 .display {
-    
     margin: 20px auto;
     padding: 10px;
     margin-bottom: 20px;
     background-color: rgb(245,245,245);
-    width: max(70%,500px);
+    width: max(70%,550px);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -13,7 +12,7 @@
     box-shadow: 2px 2px 4px 1px rgb(61, 61, 61) ;
     border-radius: 5px;
   }
-  
+ 
   .display > div {
     margin-bottom: 15px;
   }
@@ -53,3 +52,10 @@
 .table_pat tr{
 height: 37px;
   }
+@media (max-width:417px){
+  .display {
+    width:96%;
+    padding: 0;
+    flex-direction: column;
+  }
+}

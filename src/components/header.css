@@ -12,16 +12,14 @@
 .logo_space{
     background-color: rgb(245,245,245);
     width: 300px;
-    height: 60px;
     display: flex;
     flex-direction: row;
 }
 
+
 .logo_img{
     width: 60px;
     height: 60px;
-    left: 0px;
-    align-items: center;
     background-image: url(../ns_images/logo.jpg);
     background-position: center;
     background-size: cover;
@@ -33,7 +31,7 @@
     width: 220px;
     height: 50px;
     font-size: 46px;   
-    
+    letter-spacing: -1px;
 }
 .neuro{color: rgb(31,139,204) ;
 }
@@ -43,11 +41,9 @@
     padding: 0;
     list-style: none;
     padding-top: 4px;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .headlist li{
@@ -90,30 +86,34 @@
     cursor: pointer;
     
 }
+.Responsive_menu{
+ display: none;
+}
 
 /* ////////////// lil pic/////////////// */
 .submenu{
-    width: 55px;
-    height: 55px;
+    height: 90%;
+    width: 45px;
     margin-right:20px;
     position: relative;
 }
 .lil_profil_pic{
-    width: 55px;
-    height: 55px;
+    margin-top: 5px;
+    width: 46px;
+    height: 46px;
     background-color: gray;
     border-radius: 30px;
     cursor: pointer;
     background-image: url(../ns_images/logo.jpg);
     background-position: center;
     background-size: cover;
-    border: 1px solid gray
+    border: 1px solid rgb(202, 200, 200)
 }
 
 
 
 
-
+/* --------------  sub menuuuuuuuuuuuuuuu  ---------------- */
 
 .real_sub_menu{
     background-color: rgb(222, 220, 220);
@@ -121,16 +121,16 @@
     height: max-content;
     position: absolute;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     top:  70px;
     right: 0;
-    visibility: hidden;
-    z-index: 1;
+    z-index: 2;
     border: 1px solid gray;
     border-radius: 5px;
 }
 
 .sub_menu_list_elements{
+    width: 100%;
     list-style: none;
     display: block;
     font-size: large;
@@ -149,11 +149,86 @@
 
 }
 .sub_menu_list_elements li:hover{
-  background-color: rgb(31,139,204);
-  cursor: pointer;
-transition: 0.1s;
+    background-color: rgb(31,139,204);
+    cursor: pointer;
+  transition: 0.1s;
 }
 ::placeholder{
     font-size: 18px;
     font-weight: 500;
+
+}
+@media (max-width:417px) {
+    .header{
+        height: 50px;
+        align-items: start;
+    }
+    .logo_space{
+        width: min-content;
+        align-items: center;
+        background-color: transparent;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .logo_img{
+        display: none;
+    }
+    .logo_text{
+        width: fit-content;
+        padding: 0;
+        margin-left: 4px;
+      }
+    .neuro,.soin{
+        font-size: 35px;
+    }
+    .headlist{
+        width: 100%;
+        top:54px;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        background-color:white;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        height: 0;
+        transition-duration: .5s;
+        z-index: 4;
+        border-bottom: 1px solid gray;
+
+    }
+    .headlist li{
+        padding: 20px;
+        border-bottom: 1px solid gray;
+        width: 100%;
+        text-align: center;
+    }
+    .headlist li::after {
+        display: none;
+    }
+    .Responsive_menu{
+        width: 33px;
+        height: 33px;
+        margin: 3px 20px;
+        padding-top: 17px;
+        display: block;
+        background-image: url(../ns_images/dropdownpng.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat:no-repeat ;
+        transform: rotate(180deg);
+        transition: .5s;
+    }
+    .buttonlogin{
+        transform: scale(0.8);
+
+    }
+    .buttonlogin a {
+        margin: 0;
+        margin-top: 8px;
+    }
+    .lil_profil_pic{
+        margin-top: 1px;
+    }
 }

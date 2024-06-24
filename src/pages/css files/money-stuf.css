@@ -104,10 +104,10 @@ background-color: rgb(245,245,245);
 
 }
 .price_itself::before{
-  content: "€";
+  content: "da";
   font-size: 27px;
   top: 0;
-  left: -15px;
+  left: -30px;
   position: absolute;
 
 }
@@ -179,20 +179,8 @@ background-color: rgb(245,245,245);
   display: flex;
   flex-wrap: wrap;
 }
-.purchaing_chooose,.purchaing_data_to_buy{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.purchaing_chooose{
-  width: 300px;
-  border-right: 1px solid rgb(202, 193, 193);
-  border-bottom: 30px;
-}
-.purchaing_data_to_buy{
-margin: 0;
-}
+
+
 @media(max-width:818px){
   .pop_up_window{
   align-items: start; 
@@ -200,47 +188,14 @@ margin: 0;
   .purchasing_box{
     flex-direction: column;
     align-items: center;
-
     width: 330px;
-  
   }
   .purchaing_chooose{
     border-right: none;
     border-bottom: 1px solid rgb(174, 168, 168);
-  }
-  }
+  }}
 
-.purchase-form {
-  width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 5px;
-}
 
-.label {
-  font-weight: bold;
-}
-
-.input-field {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0 15px 0;
-  border-radius: 5px;
-}
-
-.submit-button {
-  width: 100%;
-  padding: 10px;
-  background-color: rgb(31,139,204);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #0269d8;
-}
 #cancel_subs_button_x{
   position: absolute;
   top: 0;
@@ -268,52 +223,66 @@ margin: 0;
   100%{ transform: translate(0px,00px);}
 
 }
-.full-name-input-div,.email-input-div{
-  min-height: 40px;
-  background-color: aqua;
-  border-radius: 5px;
-  margin: 9px auto;
+
+.purchaing_chooose,.purchaing_data_to_buy{
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.full-name-input-div input,.email-input-div input{
-  width: 100%;
-  font-size: 16px;
-  padding: 3px 5px;
-  background-color: white;
-  outline: none;
-  border: none;
+.purchaing_chooose{
+  width: 300px;
+  border-right: 1px solid rgb(202, 193, 193);
+  border-bottom: 30px;
 }
-.full-name-input-div input::placeholder,.email-input-div input::placeholder{
-color: rgb(96, 94, 94);
-text-align: start;
-padding-left: 10px;
+.purchaing_data_to_buy{
+margin: 0;
 }
-.cardNumberElement{
-  height: 20px;
-  background-color: white;
-  padding: 10px;
-
-}
-.card-ccv-expired-input-div{
-  height: 40px;
-  margin: 5px auto;
-}
-
-
-.card-ccv-expired-input-div {
-  display: flex; 
-  justify-content: space-between; 
-}
-
-.cardcvcdiv,.card_expr {
-  flex: 1;
-  background-color: white;
-  border: 1px solid rgb(244, 239, 239);
+.purchase-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
   border-radius: 5px;
-  padding: 12px;
-  
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-
-
-
+.compte_number_and_key{
+  height: 30px;
+  margin: 10px;
+  display: flex;
+  gap: 5px;
+}
+#compte_number,#compte_number2{
+   border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(205, 205, 205);
+  font-size: 18px;
+  padding-left: 10px;
+}
+  #compte_number{
+    width: 60%;
+  }
+#compte_number2{
+  width: 30%;
+}
+.compte_name input{
+  height: 30px;
+  width: 250px;
+  margin: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(205, 205, 205);
+  font-size: 18px;
+  padding-left: 10px;
+}
+.compte_address input{
+  width: 250px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(205, 205, 205);
+  font-size: 18px;
+  padding-left: 10px;
+}

@@ -54,5 +54,9 @@
   .submit-button:hover {
     background-color: #0056b3;
   }
-  
-  
+  @media(max-width:417px){
+    .feedback-form {
+      width: calc(95% - 10px);
+      padding: 10px;
+    }
+  }  

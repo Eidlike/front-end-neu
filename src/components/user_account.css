@@ -18,7 +18,7 @@
 }
 
 .information_table tr{
-height: 40px;
+height: 50px;
 }
 
 
@@ -127,28 +127,27 @@ height: 40px;
     align-items: center;
   }
   .pictur_container_small{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
   .pictur_container_small img{
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   border-radius: 100px;
 
   }
-
-
 .pop_up_card_to_print{
   position: fixed;
-  width: 100%;
+  width: calc(100% + 230px);
   height: 100%;
-  background-color:rgba(0, 0, 0, .8);
+  background-color:rgba(0, 0, 0, .6);
   z-index: 222;
   bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: translate(-230px,0);
   }
   .card_body_print{
     overflow: hidden;
@@ -234,4 +233,17 @@ border-bottom-left-radius: 20px;
   display: flex;
   justify-content: space-around;
 align-items: start
+ }
+ @media(max-width:417px){
+  .everthinggg,.editable_infos,.information_table{width: 100%;}
+  .pop_up_card_to_print{
+    width: 100%;
+    height: 100%;
+    transform: translate(0);
+    }
+    .card_body_print{
+        transform: scale(0.78);
+        margin: 0;
+    }
+  
  }

@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Passchange() {
 
-  const [can,setcan]=useState(false)
+  const [can,setcan]=useState(true)
   const [user_id,setuser_id]=useState()
   
     const passwordRef = useRef('');
@@ -88,11 +88,11 @@ const showToasts = () => {
     <div className="containerz">
         <div className='log_in_form_text' ><h1> Changing password safely.</h1> </div> 
 
-<div className='content'>       
-<div className='content_image'></div>  
+<div className='content' style={{width:'100%'}}>       
+<div className='content_image'/>
 
         <div className='resorint_password_box_email_searcher' style={{backgroundColor:"transparent"}}>
-            <form onSubmit={new_password} >
+            <form onSubmit={new_password} style={{width:'100%'}} >
                     <div className='restoring_email'> <input ref={passwordRef}  type={visible? "text":"password"} placeholder="Password" name="password" required /> {visible?<FaLockOpen className="iconpass" onClick={changestate}/>:<FaLock className="iconpass" onClick={changestate}/>}  </div>
                     <div className='restoring_email'> <input ref={passwordRef2}  type={visible2? "text":"password"} placeholder="Repeat assword" name="password" required /> {visible2?<FaLockOpen className="iconpass" onClick={changestate2}/>:<FaLock className="iconpass" onClick={changestate2}/>}  </div>
                     <button className='restoring_pass_buttn' type='submit'> Restore</button>

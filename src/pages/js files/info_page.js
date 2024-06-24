@@ -11,9 +11,10 @@ import Useraccount from '../../components/user_account';
 import FeedbackForm from '../../components/feedback';
 import Adminpage from './admin_page';
 import { useParams } from 'react-router';
+import Appointments from '../../components/appointments';
 
 
-function navigated(locat){
+function navigated(locat,user){
   let compo;
 
   switch(locat){
@@ -36,9 +37,8 @@ function navigated(locat){
       compo=<Yourpatients/> 
       break;
 
-      case 'Dates':
-      console.log('Dates')
-      compo=<Addpatient/> 
+      case 'Appointment':
+      compo=<Appointments user={user}/> 
       break;
 
       case 'Account':
@@ -50,9 +50,6 @@ function navigated(locat){
       console.log('Feedback')
       compo=<FeedbackForm/> 
       break;
-
-
-
       default :
       compo=<Overview/>
   }
@@ -60,15 +57,15 @@ function navigated(locat){
 
 }
 
-export default function Geninfo(){
+export default function Geninfo({user}){
   const [compon,setcompon]=useState()
   const {id} = useParams()
 
  useEffect(()=>{
   setcompon(id)
  },[id])
-return (<div>
-      <Header></Header>
+return (<>
+      <Header/>
 
   <div className='generel_infoo'>
     <Sidenav setcompon={setcompon}/>
@@ -77,8 +74,8 @@ return (<div>
 
 
 <div className='docu_nav'>
-          {navigated(compon)}
-</div></div></div>
+          {navigated(compon,user)}
+</div></div></>
    
   )
 }

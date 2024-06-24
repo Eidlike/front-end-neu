@@ -27,7 +27,7 @@ function App() {
         if (data.ID_user !== undefined) {
           setUser(data.ID_user);
         } else {
-          console.error('err:', data.error);
+          console.log('err:', data.error);
         }
       } catch (error) {
         console.log('err:', error);
@@ -45,13 +45,13 @@ function App() {
           <Route path='*' element={<HomePage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/sign_up' element={<Signup />} />
-          <Route path='/gen_info/:id' element={  user!==null?<Geninfo />:<HomePage/>} />
-
+          <Route path='/gen_info/:id' element={  user!==null?<Geninfo user={user} />:<HomePage/>} />
           <Route path='/gen_info/add_patient' element={user!==null?<Addpatient />:<HomePage/>} />
           <Route path='/changepass/:token' element={<Passchange />} />
-          <Route path='/offers' element={user!==null?<Pricingpage />:<HomePage/>} />
+          <Route path='/offers' element={<Pricingpage user={user}/>}/>
           <Route path='/test' element={<Testt />} />
           <Route path='/app' element={<Appointments />} />
+          <Route path='/header' element={<Passchange/>} />
         </Routes>
       </BrowserRouter>
   );

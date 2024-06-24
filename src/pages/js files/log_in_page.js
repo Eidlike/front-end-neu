@@ -117,25 +117,18 @@ const showToast = () => {
  <Header/>
     <div className="containerz">
         <div className='log_in_form_text' ><h1> Welcome back <br/>log in Doctor/Patient.</h1></div> 
+        <div className='content_image'/> 
 
-<div className='content'>       
-<div className='content_image'></div>  
 <div className='log_in_form'>
     
      <form onSubmit={submit_login}>
      <div className='email'><input  ref={emailRef} id='email' type='email'  placeholder='Email' required></input> </div>
 <div className='password'> <input ref={passwordRef} id='password' type={visible? "text":"password"} placeholder="Password" name="password" required /> {visible?<FaLockOpen className="iconpass" onClick={changestate}/>:<FaLock className="iconpass" onClick={changestate}/>}</div>
-<div className='have_not_account' style={{color:" rgb(31,139,204)",cursor:'pointer'}} onClick={()=>setisshowen(true)}> Forgot password? </div>
-
-<div style={{borderRadius:"10px"}}><input id='log_in_button'type='submit'value='Log in' ></input>     </div>
-<div className='have_not_account'> you dont have an account? <a href='/sign_up'>Sign up now</a></div>
-
-   
+<div style={{width:"100%"}}><div className='have_not_account' > <span style={{color:" rgb(31,139,204)",cursor:'pointer'}} onClick={()=>setisshowen(true)}>Forgot password?</span>  </div> </div>
+<input id='log_in_button'type='submit'value='Log in' ></input>
+<div className='have_not_account'> have not account? <a href='/sign_up'>Sign up now</a></div>
      </form>
-
-     </div>
-     
-     </div>
+     </div>    
     </div>
     </div>
 

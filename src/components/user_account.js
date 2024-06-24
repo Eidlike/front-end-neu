@@ -6,6 +6,7 @@ import { BsTelephone } from "react-icons/bs";import { TfiWorld } from "react-ico
 import { MdOutlineEmail } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import {useReactToPrint} from 'react-to-print'
+import {toast} from "react-toastify"
 
 
 function Useraccount() {
@@ -47,10 +48,10 @@ const printhandl = useReactToPrint({
         setUserData(fetcheddata[0]);
         console.log("user form is thissssssssss",fetcheddata)
 
-        }catch{ alert('errour happened 405')}
+        }catch{ alert('errour happened')}
     }
     getdata();
-   },[role, user])
+   },[role, user,editMode])
 
 //----------------------------------les function------------------------------//
 
@@ -66,25 +67,45 @@ const handleSave = async () => {
 
       const fetcheddata= await fetchdata.json()
 
-      alert(fetcheddata.message);
+      if(fetcheddata.message){
+        toast.success('data is updated', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      };
       setEditMode(false);
 
 
     } catch {
-      alert('Errr updating user data:');
-    }
-  }
-
-
+      toast.error('Server error', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });}}
+      const formtt = (dateString) => {
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}-${month}-${year}`;
+      };
 
   return (
     <>
     <div className='everthinggg'>
     {userform.map(elem=>( <div className='editable_infos' key={elem.ID_users}  >
-
     <div className='big_pictur_container'>
 <div className='pictur_container_small'>
-      <img src={'http://localhost:5000/logo.jpg'}    alt='' />
+      <img src={'http://localhost:5000/visual_data/logo.jpg'}    alt='' />
 </div>
 
 </div>
@@ -108,7 +129,7 @@ const handleSave = async () => {
             </tr>)}
              <tr>
                 <th>Birthday</th>
-                <td>{editMode ? <input type="date" value={userData.Birthday} onChange={(e) => setUserData({ ...userData, Birthday: e.target.value })} /> : elem.Birthday}</td>
+                <td>{editMode ? <input type="date" value={userData.Birthday} onChange={(e) => setUserData({ ...userData, Birthday: e.target.value })} /> : formtt(elem.Birthday)}</td>
               </tr>
               <tr>
                 <th>Email</th>

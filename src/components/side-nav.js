@@ -1,16 +1,17 @@
 import React,{useState,useEffect} from 'react'
 import { useCookies } from 'react-cookie';
 import './side_nav.css'
-import {Link} from 'react-router-dom'
 import Logoutt from './logout_fun';
+import { useNavigate } from 'react-router-dom';
 
 
 function Sidenav({setcompon}) {
+  const navigate=useNavigate()
   const [user,setuser]=useState(null)
+  const [width,setwidth]=useState(window.innerWidth > 480 ?'230px':'0')
   // eslint-disable-next-line no-unused-vars
   const[cookie,setcookies]=useCookies(["AccessToken"]);
-
-
+   
 const Verify=async ()=>{
   try{
     const token=cookie.AccessToken;
@@ -34,27 +35,27 @@ useEffect(()=>{
   setuser(null)
 
 }
-
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[]);
- 
+  return (<>
+  <div className='menu-image_responsive'  onClick={()=>{if(width==='0'){setwidth('75%')} else{setwidth('0')}}}/>
+      <div className='side_navigation_keys_background'  style={{ height: width === '0' ? '0' : '100%' }}>
 
-  return (
-          <div className='side_bar_navigation'>
+   <div className='side_bar_navigationn' style={{width:width}}>
       <div className='pic_container'><div className='profil_pic'></div> </div>
       <ul>
-     {  user==='admin'?<li onClick={()=>setcompon('Admin')}>Admin section   </li>:null}
-     { user==='Doctor'&&   <li>  <Link to='http://localhost:3000/gen_info/Overview'   > Overview</Link> </li>}
-     { user==='Doctor'&&   <li>  <Link to='http://localhost:3000/gen_info/Addpatient' > Addpatient</Link> </li>}
-     { user==='Doctor'&&   <li>  <Link to='http://localhost:3000/gen_info/Yourpatient'> Yourpatient</Link> </li>}
-                           <li><Link to='http://localhost:3000/gen_info/Appointment'> Appointment</Link>         </li>
-                           <li><Link to='http://localhost:3000/gen_info/Account'    > Account</Link>         </li>
-                           <li><Link to='http://localhost:3000/gen_info/Feedback'   > Feedback</Link>        </li>
+     {  user==='admin'&&   <li onClick={()=>{navigate("/gen_info/Admin")}}      > Admin section   </li>}
+     { user==='Doctor'&&   <li onClick={()=>{navigate("/gen_info/Overview")}}   > Overview        </li>}
+     { user==='Doctor'&&   <li onClick={()=>{navigate("/gen_info/Addpatient")}} > Addpatient      </li>}
+     { user==='Doctor'&&   <li onClick={()=>{navigate("/gen_info/Yourpatient")}}> Yourpatient     </li>}
+                           <li onClick={()=>{navigate("/gen_info/Appointment")}}> Appointment     </li>
+                           <li onClick={()=>{navigate("/gen_info/Account")}}    > Account         </li>
+                           <li onClick={()=>{navigate("/gen_info/Feedback")}}   > Feedback        </li>
             <Logoutt/>
       </ul>
  </div>
-  
-  
+ </div>
+  </>
   )
 }
 

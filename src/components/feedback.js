@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './feedback.css'
+import {toast} from 'react-toastify'
 
 const FeedbackForm = () => {
   const [formData, setFormData] = useState({
@@ -7,15 +8,60 @@ const FeedbackForm = () => {
     Role: '',
     message: ''
   });
+  const [dis,setdis] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log(formData);
+    setdis(true)
+ await fetch('http://localhost:5000/recieving_complains',
+  {method:'post',
+    headers:{
+      'Content-type' : 'application/json'
+    },
+    body:JSON.stringify(formData)
+  })
+  .then(res => res.json())
+  .then((ress) =>
+    { if(ress.message==="check your email please"){
+      toast.success('Your feedback has submitted successfully', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+     }
+    else{
+      toast.error('Email doesnt exist', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
+    }}
+)
+  .catch( error => {toast.error('Server error', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });})
+  setdis(false)
+
   };
 
   return (
@@ -57,7 +103,7 @@ const FeedbackForm = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-button" disabled={dis} > { !dis ? "Submit" : "Sending..." }</button>
       </form>
     </div>
   );

@@ -1,25 +1,37 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify'
+
 
 export default function Visualdocs({ Last_patient, doctor }) {
     const [data, setdata] = useState([]);
     const [images, setimages] = useState(null);
+    const[reload,setreload]=useState(true)
+
 
     const submit_docs = async (e) => {
+        setreload(prev =>!prev)
         e.preventDefault();
-
         if (images) {
             const formData = new FormData();
             for (let i = 0; i < images.length; i++) {
                 formData.append('image', images[i]);
             }
+            
             formData.append('patient', Last_patient);
             formData.append('doctor', doctor);
 
             try {
                 const fetchdata = await fetch('http://localhost:5000/upload_file', { method: 'post', body: formData });
                 if (fetchdata.ok) {
-                    alert('Uploaded successfully');
-                    window.location.reload();
+                    toast.success("The visual data have been uploaded successfully", {
+                        position: "top-right",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                      });;
                 } else {
                     alert('Error uploading data. Please check your files.');
                 }
@@ -30,6 +42,7 @@ export default function Visualdocs({ Last_patient, doctor }) {
         } else {
             alert('Error in uploading data. Please check your files.');
         }
+        setreload(prev =>!prev)
     };
 
     useEffect(() => {
@@ -49,17 +62,22 @@ export default function Visualdocs({ Last_patient, doctor }) {
         };
 
         get_img();
-    }, [Last_patient]);    
+    }, [Last_patient,reload]); 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+      };   
     return (
         <>
             {data.length > 0 ? (
                 data.map((dataa, index) => (
                     <div key={dataa.Date_insertion}>
-                        <div className="date_visual_docs">{dataa.Date_insertion}</div>
+                        <div className="date_visual_docs">{formatDate(dataa.Date_insertion)}</div>
                         <div className={'visual_docs visual_docs_' + index} style={{ overflowX: 'auto', overflowY: 'hidden', scrollbarWidth: 'none', msOverflowStyle: 'none', position: 'relative' }}>
                             {dataa.image_name.map((imageName, i) => (
                                 <div className="small" key={i}>
-                                    <img src={'http://localhost:5000/' + imageName} alt="" onClick={() => { window.location.href = 'http://localhost:5000/' + imageName }} />
+                                    <img src={'http://localhost:5000/visual_data/' + imageName} alt="" onClick={() => { window.open('http://localhost:5000/visual_data/' + imageName, '_blank') }} />
                                 </div>
                             ))}
                            
@@ -67,15 +85,18 @@ export default function Visualdocs({ Last_patient, doctor }) {
                     </div>
                 ))
             ) : (
-                <div>
+                <div style={{display:'flex',alignContent:"center",justifyContent:'center'}}>
                     <p>NO DATA YET</p>
                 </div>
             )}
             <div className="img_upload">
                 <form>
-                    {images === null ? (
-                        <input type="file" accept="image/*" className="file-input" multiple onChange={(ev) => setimages(ev.target.files)} />
-                    ) : null}
+
+                    {images === null && (
+                      <div className='upload_button_div'><input type="file" accept="image/*" className="file-input" multiple onChange={(ev) => setimages(ev.target.files)} /></div> 
+                    ) }
+
+
                     {images !== null ? (
                         <button className="upload-button" onClick={submit_docs}>
                             Upload Image

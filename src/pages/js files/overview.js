@@ -26,7 +26,8 @@ function Overview() {
       })
       const response = await fetched_data.json()
       setdoc(response.ID_user)
-      setlast_pat(response.last_patient)    
+      setlast_pat(response.last_patient)  
+      console.log(response.last_patient)  
   
   
   
@@ -43,11 +44,7 @@ function Overview() {
       <Patientinfo Last_patient={last_pat} />
        <h1 style={{color:'rgb(31,139,204)'}}> Visual Data</h1>       
        
- <div className='V_btn'>  <button>3D Visualization</button> </div> 
-
             <Visualdocs Last_patient={last_pat} doctor={doc} />
-        
-
                 </div>
 </>
   )

@@ -115,8 +115,6 @@
    
    
 //       </form>
-//       {paymentError && <div>{paymentError}</div>}
-//       {paymentSuccess && <div>Payment successful!</div>}
 //     </>
 //   );
 // }

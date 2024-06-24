@@ -10,7 +10,7 @@ return<>
 <div className='contentt'>
     <div className='left'>   <h1><span>NeuroSoin</span></h1><h3>For better diagnosis streamlines
 record-keeping.</h3>   </div>
-    <div className='right'> </div>
+    <div className='right'/>
 </div>
 
 <div className='second_prt'>
@@ -22,7 +22,7 @@ record-keeping.</h3>   </div>
 
 <footer>
     <div className="footer-content">
-        <h3>Neurosoin EHR - Empowering Your Practice</h3>
+        <h3 style={{margin:"0px auto"}}>Neurosoin EHR - Empowering Your Practice</h3>
         
         <div className="contact-info">
             <p>Contact Us:</p>

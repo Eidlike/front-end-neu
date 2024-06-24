@@ -1,10 +1,11 @@
 body {
   background-color: rgb(245,245,245);
-  padding: 0%;
-  margin: 0%;
+  padding: 0;
+  margin: 0;
   font-family: initial;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
